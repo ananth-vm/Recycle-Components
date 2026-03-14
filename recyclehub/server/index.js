@@ -1,7 +1,5 @@
 require('dotenv').config();
 
-require('dotenv').config();
-
 /* console.log("🔍 ENV CHECK:");
 console.log("MONGO_URI:", process.env.MONGO_URI ? "✅ Set" : "❌ Missing");
 console.log("FIREBASE_PROJECT_ID:", process.env.FIREBASE_PROJECT_ID ? "✅ " + process.env.FIREBASE_PROJECT_ID : "❌ Missing");

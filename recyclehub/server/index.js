@@ -15,8 +15,13 @@ const adminRoutes = require('./routes/admin');
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:3000' }));
-app.use(express.json());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'http://10.5.10.132:3000',
+  ],
+  credentials: true,
+}));app.use(express.json());
 
 // MongoDB Connection
 
@@ -38,6 +43,6 @@ app.get('/api/health', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+app.listen(PORT,'0.0.0.0', () => {
   console.log(`🚀 ReCycle Hub server running on port ${PORT}`);
 });
